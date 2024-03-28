@@ -84,7 +84,7 @@ void initialisePins() {
 char receiveCommand() {
   if (Serial.available() > 0) {
     char input = Serial.read();
-  	return input;
+    return input;
   }
 }
 
@@ -116,15 +116,15 @@ void checkWarning() {
     warned = true;
     Serial.println("!!! WARNING !!! Object ahead within 30cm.");
   } else if (distance > warningDistance && warned == true) {
-  	warned = false;
+    warned = false;
     Serial.println("Object no longer in warning range.");
   }
 }
 
 // Calculate distance between any object infront and the sensor
 int calculateDistance() {
-	int duration = pulseIn(echoPin, HIGH);
-  	return (duration * 0.034)/2;
+    int duration = pulseIn(echoPin, HIGH);
+    return (duration * 0.034)/2;
 }
 
 
